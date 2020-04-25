@@ -11,6 +11,9 @@
         vertical-align: top;
         margin-right: 50px;
       }
+      .turn {
+        border: 1px solid black;
+      }
       #rival {
         vertical-align: bottom;
       }
@@ -19,6 +22,7 @@
         display: inline-block;
         vertical-align: top;
         width: 200px;
+        background: silver;
       }
       #rival-deck,
       #rival-hero,
@@ -41,6 +45,7 @@
         position: relative;
         border: 1px solid black;
         margin-bottom: 10px;
+        background: white;
       }
 
       .card-att,
@@ -48,6 +53,7 @@
       .card-cost {
         font-size: 12px;
         text-align: center;
+        font-weight: bold;
         line-height: 15px;
         width: 15px;
         height: 15px;
@@ -61,129 +67,57 @@
         bottom: auto;
         top: 0;
         right: 0;
+        color: white;
+        background-color: blue;
       }
       .card-att {
         left: 0;
+        background-color: yellow;
       }
 
       .card-hp {
         right: 0;
+        background-color: red;
+        color: white;
+      }
+      .card-hidden {
+        display: none;
+      }
+      #turn-btn {
+        float: right;
+        position: relative;
+        top: -23px;
       }
     </style>
   </head>
   <body>
     <div id="rival">
-      <div id="rival-cost">코스트:<span>10</span></div>
+      <div>코스트:<span id="rival-cost">10</span>/<span>10</span></div>
       <div id="rival-hero">
         <!--상대방 영웅-->
-        <div class="card">
-          <div class="card-name">적 영웅</div>
-          <div class="card-att">5</div>
-          <div class="card-hp">10</div>
-        </div>
       </div>
-      <div id="rival-cards">
-        <div class="card">
-          <div class="card-cost">2</div>
-          <div class="card-att">5</div>
-          <div class="card-hp">10</div>
-        </div>
-        <div class="card">
-          <div class="card-cost">2</div>
-          <div class="card-att">5</div>
-          <div class="card-hp">10</div>
-        </div>
-        <div class="card">
-          <div class="card-cost">2</div>
-          <div class="card-att">5</div>
-          <div class="card-hp">10</div>
-        </div>
-      </div>
+      <div id="rival-cards" style="height: 150px;"></div>
     </div>
     <div id="rival-deck">
       <div>덱</div>
-      <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
-      </div>
-      <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
-      </div>
-      <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
-      </div>
-      <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
-      </div>
-      <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
-      </div>
     </div>
     <hr />
-
-    <div id="my">
-      <div id="my-cards">
-        <div class="card">
-          <div class="card-cost">2</div>
-          <div class="card-att">5</div>
-          <div class="card-hp">10</div>
-        </div>
-        <div class="card">
-          <div class="card-cost">2</div>
-          <div class="card-att">5</div>
-          <div class="card-hp">10</div>
-        </div>
-        <div class="card">
-          <div class="card-cost">2</div>
-          <div class="card-att">5</div>
-          <div class="card-hp">10</div>
-        </div>
-      </div>
+    <button id="turn-btn">턴넘기기</button>
+    <div id="my" class="turn">
+      <div id="my-cards" style="height: 150px;"></div>
       <div id="my-hero">
         <!-- 내 영웅-->
-        <div class="card">
-          <div class="card-name">내 영웅</div>
-          <div class="card-att">5</div>
-          <div class="card-hp">10</div>
-        </div>
       </div>
-      <div id="my-cost">코스트:<span>10</span></div>
+      <div>코스트:<span id="my-cost">10</span>/<span>10</span></div>
     </div>
     <div id="my-deck">
       <div>덱</div>
+    </div>
+    <div class="card-hidden">
       <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
-      </div>
-      <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
-      </div>
-      <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
-      </div>
-      <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
-      </div>
-      <div class="card">
-        <div class="card-cost">2</div>
-        <div class="card-att">5</div>
-        <div class="card-hp">10</div>
+        <div class="card-cost"></div>
+        <div class="card-att"></div>
+        <div class="card-hp"></div>
       </div>
     </div>
     <script src="script.js"></script>
